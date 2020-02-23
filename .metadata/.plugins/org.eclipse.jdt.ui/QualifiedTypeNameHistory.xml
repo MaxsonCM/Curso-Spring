@@ -28,8 +28,18 @@
 <fullyQualifiedTypeName name="javax.lang.model.element.Parameterizable"/>
 <fullyQualifiedTypeName name="java.lang.reflect.ParameterizedType"/>
 <fullyQualifiedTypeName name="com.maxson.curso.boot.dao.AbstractDao"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="com.maxson.curso.boot.domain.Cargo"/>
 <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+<fullyQualifiedTypeName name="com.maxson.curso.boot.domain.Cargo"/>
+<fullyQualifiedTypeName name="com.maxson.curso.boot.service.CargoService"/>
+<fullyQualifiedTypeName name="com.maxson.curso.boot.dao.CargoDao"/>
+<fullyQualifiedTypeName name="com.maxson.curso.boot.service.DepartamentoService"/>
 <fullyQualifiedTypeName name="com.maxson.curso.boot.domain.Departamento"/>
+<fullyQualifiedTypeName name="com.maxson.curso.boot.service.FuncionarioService"/>
+<fullyQualifiedTypeName name="com.maxson.curso.boot.domain.Funcionario"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.maxson.curso.boot.dao.FuncionarioDao"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="javax.transaction.Transactional"/>
+<fullyQualifiedTypeName name="org.springframework.transaction.annotation.Transactional"/>
 </qualifiedTypeNameHistroy>
