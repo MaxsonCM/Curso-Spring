@@ -48,7 +48,7 @@ public abstract class AbstractDao <T, PK extends Serializable> {
 		for (int i = 0; i < params.length; i++) {
 			query.setParameter(i+1, params[i]);
 		}
-		return query.getResultList();
+		return query.getResultList();		
 	}
 	
 }

@@ -7,8 +7,8 @@
   <icon>https://spring.io/favicon.ico</icon>
   <updated>2020-02-24T06:49:00Z</updated>
   <entry>
-    <title>Netflix Built an Application Generator to Boost Productivity. Here's How You Can, Too.</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/02/24/netflix-built-an-application-generator-to-boost-productivity-here-s-how-you-can-too" />
+    <title>Netflix Built a Spring Application Generator to Boost Dev Productivity. Here's How You Can, Too.</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/02/24/netflix-built-a-spring-application-generator-to-boost-dev-productivity-here-s-how-you-can-too" />
     <category term="engineering" label="Engineering" />
     <author>
       <name>Ben Wilcock</name>
@@ -22,11 +22,11 @@
 &lt;p&gt;Top of Taylor’s list of productivity secrets is &lt;em&gt;Application Generators&lt;/em&gt;. Netflix found that developers adopt platforms far quicker when everything they need to get started is right there, at their fingertips. Application generators help developers to get started quickly by providing useful guide rails that reduce toil and ease their burden. Application generators also encourage common approaches to common problems – particularly useful if you have lots of teams creating microservices at the same time.&lt;/p&gt;
 &lt;p&gt;Also high on Taylor&amp;rsquo;s list is &lt;em&gt;easing access to important libraries&lt;/em&gt;. Every enterprise has libraries - tools they rely on to simplify a task or take care of the plumbing. These libraries are quite important, often including proprietary business logic that’s both private and unique. Application generators can help developers to get easy access to these libraries without having to delve into docs, wade through wiki’s, or search in maven repositories.&lt;/p&gt;&lt;h2&gt;&lt;a href="#are-application-generators-useful" class="anchor" name="are-application-generators-useful"&gt;&lt;/a&gt;Are Application Generators Useful?&lt;/h2&gt;
 &lt;p&gt;Yes. You probably use an application generator already. The best example I can think of is &lt;a href="https://start.spring.io"&gt;start.spring.io&lt;/a&gt;, also known as the “Spring Initializr” (although others exist, such as &lt;a href="https://start.steeltoe.io/"&gt;this one for .Net applications&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;Spring Initializr makes generating Spring Boot apps a cinch. The secret to its success is no secret at all: it’s superbly easy to use. You can use it &lt;a href="https://start.spring.io"&gt;in your browser&lt;/a&gt;, or directly from inside your IDE. You can even use it from the command line via cURL or &lt;a href="https://httpie.org/"&gt;HTTPie&lt;/a&gt; or directly from the &lt;a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#cli"&gt;Spring Boot CLI&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#build-your-own-application-generator" class="anchor" name="build-your-own-application-generator"&gt;&lt;/a&gt;Build Your Own Application Generator&lt;/h2&gt;
+&lt;p&gt;Spring Initializr makes generating Spring Boot apps a cinch. The secret to its success is no secret at all: it’s superbly easy to use. You can use it &lt;a href="https://start.spring.io"&gt;in your browser&lt;/a&gt;, or directly from inside your IDE. You can even use it from the command line via cURL or &lt;a href="https://httpie.org/"&gt;HTTPie&lt;/a&gt; or from the &lt;a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#cli"&gt;Spring Boot CLI&lt;/a&gt; tool.&lt;/p&gt;&lt;h2&gt;&lt;a href="#build-your-own-application-generator" class="anchor" name="build-your-own-application-generator"&gt;&lt;/a&gt;Build Your Own Application Generator&lt;/h2&gt;
 &lt;p&gt;How? With Spring of course! There’s even a library for it. The library is also called &lt;a href="https://github.com/spring-io/initializr"&gt;Spring Initializr&lt;/a&gt;. It’s the core library that powers &lt;a href="https://start.spring.io"&gt;start.spring.io&lt;/a&gt; and it&amp;rsquo;s super easy to customize. In the rest of this article, we’ll walk through the steps required to create your own customized initializr. &lt;/p&gt;
 &lt;p&gt;To simulate what you would do inside your enterprise, in this tutorial we’ll narrow some of the application generation options and include some third-party libraries that the regular Spring Initializr doesn’t offer, namely the &lt;a href="https://axoniq.io/"&gt;Axon CQRS and Event Sourcing Framework&lt;/a&gt;. We’ll call our project the “Axon Initializr”.&lt;/p&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;NOTE: The full code from this tutorial can be found &lt;a href="https://github.com/benwilcock/axon-initializr"&gt;here on GitHub&lt;/a&gt;.&lt;/p&gt;
+  &lt;p&gt;The full code from this tutorial can be found &lt;a href="https://github.com/benwilcock/axon-initializr"&gt;here on GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;&lt;h3&gt;&lt;a href="#step-one-create-a-spring-web-project" class="anchor" name="step-one-create-a-spring-web-project"&gt;&lt;/a&gt;Step One - Create a Spring “Web” Project&lt;/h3&gt;
 &lt;p&gt;At the risk of getting recursive, we can use the &lt;a href="https://start.spring.io"&gt;start.spring.io&lt;/a&gt; website to start building our custom Axon Initializr! &lt;/p&gt;
 &lt;p&gt;Using the website, create a project with the settings in the screenshot below. Use the latest GA version of Spring Boot and make sure you include the &lt;strong&gt;&amp;ldquo;web&amp;rdquo;&lt;/strong&gt; dependency. We’re building a RESTful web service, so we need those libraries present.&lt;/p&gt;
@@ -137,7 +137,7 @@
              description: Building REST services with Spring
 &lt;/code&gt;&lt;/pre&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;NOTE: You can copy any other Spring related entries you like from &lt;a href="https://github.com/spring-io/start.spring.io/blob/master/start-site/src/main/resources/application.yml"&gt;this example YAML&lt;/a&gt; file taken from the start.spring.io configuration. &lt;/p&gt;
+  &lt;p&gt;You can copy any other Spring related entries you like from &lt;a href="https://github.com/spring-io/start.spring.io/blob/master/start-site/src/main/resources/application.yml"&gt;this example YAML&lt;/a&gt; file taken from the start.spring.io configuration. &lt;/p&gt;
 &lt;/blockquote&gt;&lt;h3&gt;&lt;a href="#step-five-add-the-axon-custom-libraries" class="anchor" name="step-five-add-the-axon-custom-libraries"&gt;&lt;/a&gt;Step Five - Add The Axon Custom Libraries&lt;/h3&gt;
 &lt;p&gt;This is the last configuration step! For our Axon Initializr, we need to add our custom Axon libraries. For brevity, I’ll just add a single Axon library here as an example. But when customizing your initializr you can add as many entries as you need.&lt;/p&gt;
 &lt;pre&gt;&lt;code class="prettyprint yaml"&gt;initializr:&#xD;
@@ -164,11 +164,11 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You might notice that this configuration looks different from the configuration in step 4. That’s because we’re explicitly calling out the maven coordinates of each library (the &lt;code&gt;groupId&lt;/code&gt;, &lt;code&gt;artifactId&lt;/code&gt;, and &lt;code&gt;version&lt;/code&gt;). We do this because the Axon Framework libraries are outside Spring, so we need to be specific.&lt;/p&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;NOTE: The examples here are just snippets. You can see the complete axon-initializr YAML configuration &lt;a href="https://github.com/benwilcock/axon-initializr"&gt;here on GitHub&lt;/a&gt;.&lt;/p&gt;
+  &lt;p&gt;The examples here are just snippets. You can see the complete axon-initializr YAML configuration &lt;a href="https://github.com/benwilcock/axon-initializr"&gt;here on GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;&lt;h2&gt;&lt;a href="#try-the-axon-initializr-from-your-ide" class="anchor" name="try-the-axon-initializr-from-your-ide"&gt;&lt;/a&gt;Try The Axon Initializr From Your IDE&lt;/h2&gt;
 &lt;p&gt;Now we’ve added our desired configurations and customizations to the &lt;code&gt;axon-initializr&lt;/code&gt; project it’s time to use it to generate an Axon application in our IDE.&lt;/p&gt;
 &lt;blockquote&gt;
-  &lt;p&gt;NOTE: I’ll use &lt;a href="https://www.jetbrains.com/idea/"&gt;IntelliJ IDEA Ultimate Edition&lt;/a&gt; as my IDE, but the same smooth developer workflow can also be accomplished easily with Eclipse, &lt;a href="https://spring.io/tools"&gt;Spring Tools&lt;/a&gt;, NetBeans, or Visual Studio Code in much the same way.&lt;/p&gt;
+  &lt;p&gt;I’ll use &lt;a href="https://www.jetbrains.com/idea/"&gt;IntelliJ IDEA Ultimate Edition&lt;/a&gt; as my IDE, but the same smooth developer workflow can also be accomplished easily with Eclipse, &lt;a href="https://spring.io/tools"&gt;Spring Tools&lt;/a&gt;, NetBeans, or Visual Studio Code in much the same way.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;First, start the &lt;code&gt;axon-initializr&lt;/code&gt; service in your terminal:&lt;/p&gt;
 &lt;pre&gt;&lt;code class="prettyprint bash"&gt;./mvnw clean package spring-boot:run
