@@ -3,15 +3,19 @@ package com.maxson.curso.boot.domain;
 import java.util.List;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "CARGOS")
 public class Cargo extends AbstractEntity<Long> {
 	
+	@NotBlank(message = "O nome é obrigatório.")
+	@Size(max = 60, message = "O nome do cargo deve ter no máximo {max} caracteres!")
 	@Column(name="nome", nullable = false, unique = true, length = 60)
 	private String nome;
 	
+	@NotNull(message = "Selecioneo departamento relativo ao cargo.")
 	@ManyToOne
 	@JoinColumn(name = "id_departamento_fk")
 	private Departamento departamento;
